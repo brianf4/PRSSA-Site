@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Contact &mdash; Cal State LA PRSSA</title>
+</head>
+<body class="bg-cream font-sans text-body">
+	<%- include('partials/navbar') %>
+
+	<section class="grid grid-cols-1 gap-16 px-8 py-16 sm:px-14 sm:py-20 lg:grid-cols-2">
+		<div class="flex flex-col gap-9">
+			<div class="flex flex-col gap-4.5">
+				<span class="text-xs tracking-[0.24em] uppercase text-brown">Contact</span>
+				<h1 class="text-balance font-serif text-5xl leading-[1.05] text-ink sm:text-6xl">Get in touch with the board.</h1>
+				<p class="max-w-md text-[17px] leading-relaxed text-body">Students with questions about joining, and professionals interested in speaking, mentoring, or hosting a tour &mdash; we read everything that comes in.</p>
+			</div>
+
+			<div class="flex flex-col">
+				<div class="grid grid-cols-1 gap-2.5 border-t border-border py-5.5 sm:grid-cols-[140px_1fr] sm:items-baseline">
+					<span class="text-[11px] tracking-[0.2em] uppercase text-[#6E685C]">Email</span>
+					<span class="text-[17px] text-ink">calstatelaprssa@gmail.com</span>
+				</div>
+				<div class="grid grid-cols-1 gap-2.5 border-t border-border py-5.5 sm:grid-cols-[140px_1fr] sm:items-baseline">
+					<span class="text-[11px] tracking-[0.2em] uppercase text-[#6E685C]">Meetings</span>
+					<div class="flex flex-col gap-1">
+						<span class="text-[17px] text-ink">Every other Wednesday, 5:30 PM</span>
+						<span class="text-[15px] text-muted">King Hall, Room C2098</span>
+					</div>
+				</div>
+				<div class="grid grid-cols-1 gap-2.5 border-t border-border py-5.5 sm:grid-cols-[140px_1fr] sm:items-baseline">
+					<span class="text-[11px] tracking-[0.2em] uppercase text-[#6E685C]">Mail</span>
+					<span class="text-[17px] leading-relaxed text-ink">Dept. of Communication Studies<br />5151 State University Dr.<br />Los Angeles, CA 90032</span>
+				</div>
+				<div class="grid grid-cols-1 gap-2.5 border-y border-border py-5.5 sm:grid-cols-[140px_1fr] sm:items-baseline">
+					<span class="text-[11px] tracking-[0.2em] uppercase text-[#6E685C]">Social</span>
+					<div class="flex gap-5.5 text-[17px] text-ink">
+						<a href="#" class="hover:text-brown">Instagram</a>
+						<a href="#" class="hover:text-brown">LinkedIn</a>
+						<a href="#" class="hover:text-brown">X</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<form class="flex flex-col gap-5.5 bg-cream-alt p-10">
+			<h2 class="font-serif text-3xl text-ink">Send a message</h2>
+			<div class="grid grid-cols-1 gap-4.5 sm:grid-cols-2">
+				<div class="flex flex-col gap-2">
+					<label class="text-[11px] tracking-[0.16em] uppercase text-body" for="firstName">First name</label>
+					<input id="firstName" name="firstName" type="text" class="w-full border border-border bg-white px-3.5 py-3 text-[15px] text-ink" />
+				</div>
+				<div class="flex flex-col gap-2">
+					<label class="text-[11px] tracking-[0.16em] uppercase text-body" for="lastName">Last name</label>
+					<input id="lastName" name="lastName" type="text" class="w-full border border-border bg-white px-3.5 py-3 text-[15px] text-ink" />
+				</div>
+			</div>
+			<div class="flex flex-col gap-2">
+				<label class="text-[11px] tracking-[0.16em] uppercase text-body" for="email">Email</label>
+				<input id="email" name="email" type="email" class="w-full border border-border bg-white px-3.5 py-3 text-[15px] text-ink" />
+			</div>
+			<div class="flex flex-col gap-2">
+				<label class="text-[11px] tracking-[0.16em] uppercase text-body" for="reason">I'm reaching out as</label>
+				<select id="reason" name="reason" class="w-full border border-border bg-white px-3.5 py-3 text-[15px] text-ink">
+					<option>A Cal State LA student</option>
+					<option>A prospective member</option>
+					<option>A professional or speaker</option>
+					<option>An alum of the chapter</option>
+					<option>Something else</option>
+				</select>
+			</div>
+			<div class="flex flex-col gap-2">
+				<label class="text-[11px] tracking-[0.16em] uppercase text-body" for="message">Message</label>
+				<textarea id="message" name="message" class="min-h-[140px] w-full resize-y border border-border bg-white px-3.5 py-3 text-[15px] text-ink"></textarea>
+			</div>
+			<button type="submit" class="bg-ink py-4 text-center text-xs tracking-[0.16em] uppercase text-gold">Send message</button>
+		</form>
+	</section>
+
+	<div class="px-8 pb-16 sm:px-14 sm:pb-20">
+		<div class="flex h-[320px] items-end bg-[repeating-linear-gradient(135deg,#E9DFC4_0px,#E9DFC4_9px,#F7EFDC_9px,#F7EFDC_18px)] p-6">
+			<span class="bg-cream px-2.5 py-1.5 font-mono text-[11px] text-muted">campus map &mdash; King Hall, Cal State LA</span>
+		</div>
+	</div>
+
+	<%- include('partials/footer') %>
+</body>
+</html>

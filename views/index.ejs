@@ -3,10 +3,172 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Cal State LA PRSSA</title>
 </head>
-    <body>
-        <h1>test<h1/>
+<body class="bg-cream font-sans text-body">
+	<%- include('partials/navbar') %>
 
-    </body>
+	<!-- Hero -->
+	<section class="grid grid-cols-1 bg-cream-alt lg:grid-cols-[1.02fr_0.98fr]">
+		<div class="flex flex-col justify-center gap-7 px-8 py-16 sm:px-14 lg:py-24">
+			<div class="flex items-center gap-3.5">
+				<span class="h-[3px] w-9 bg-gold"></span>
+				<span class="text-xs tracking-[0.24em] uppercase text-brown">Chapter est. 2017</span>
+			</div>
+			<h1 class="text-balance font-serif text-5xl leading-[1.02] text-ink sm:text-6xl lg:text-7xl">
+				The work starts before the <span class="italic">first job.</span>
+			</h1>
+			<p class="max-w-md text-lg leading-relaxed text-body">
+				A pre-professional chapter for Cal State LA students building careers in public relations &mdash; through career panels, agency tours, and campaigns run for real clients.
+			</p>
+			<div class="flex flex-wrap gap-3.5 pt-1.5">
+				<a href="/join" class="bg-ink px-7.5 py-4 text-[13px] tracking-[0.16em] uppercase text-gold">Become a member</a>
+				<a href="/events" class="border border-ink px-7.5 py-4 text-[13px] tracking-[0.16em] uppercase text-ink">See upcoming events</a>
+			</div>
+		</div>
+		<div class="min-h-[360px] bg-gold p-7 flex items-end lg:min-h-[560px]">
+			<div class="flex h-full w-full items-end bg-[repeating-linear-gradient(135deg,rgba(21,19,15,.16)_0px,rgba(21,19,15,.16)_9px,transparent_9px,transparent_18px)] p-4.5">
+				<span class="bg-[#FFE9AE] px-2.5 py-1.5 font-mono text-[11px] tracking-[0.06em] text-body">chapter photo &mdash; members at a panel event</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- Stats -->
+	<section class="grid grid-cols-1 bg-ink text-cream sm:grid-cols-3">
+		<div class="flex flex-col gap-2 border-b border-[#2E2A22] px-8 py-11 sm:border-b-0 sm:border-r sm:px-14">
+			<span class="font-serif text-4xl leading-none text-gold sm:text-5xl">10,000+</span>
+			<span class="text-[13px] tracking-[0.14em] uppercase text-[#C4BBA8]">Students nationally</span>
+		</div>
+		<div class="flex flex-col gap-2 border-b border-[#2E2A22] px-8 py-11 sm:border-b-0 sm:border-r sm:px-12">
+			<span class="font-serif text-4xl leading-none text-gold sm:text-5xl">300+</span>
+			<span class="text-[13px] tracking-[0.14em] uppercase text-[#C4BBA8]">Chapters, four countries</span>
+		</div>
+		<div class="flex flex-col gap-2 px-8 py-11 sm:px-12">
+			<span class="font-serif text-4xl leading-none text-gold sm:text-5xl">$55</span>
+			<span class="text-[13px] tracking-[0.14em] uppercase text-[#C4BBA8]">A year, every benefit</span>
+		</div>
+	</section>
+
+	<!-- Mission -->
+	<section class="grid grid-cols-1 gap-12 px-8 pt-16 sm:px-14 sm:pt-22 lg:grid-cols-[1fr_1.15fr] lg:gap-18">
+		<div class="flex flex-col gap-3.5">
+			<span class="text-xs tracking-[0.24em] uppercase text-brown">Our mission</span>
+			<h2 class="font-serif text-4xl leading-[1.08] text-ink">A bridge between the classroom and the industry.</h2>
+		</div>
+		<div class="flex flex-col gap-5 pt-1.5 text-[17px] leading-relaxed text-body">
+			<p>We prepare Cal State LA students for careers in public relations and strategic communications by putting them in front of the people already doing the work &mdash; agency leads, in-house teams, nonprofit communicators, and chapter alumni.</p>
+			<p>Every semester the chapter runs professional development workshops, client campaigns, and community outreach. Members leave with portfolio pieces, a r&eacute;sum&eacute; that shows practice rather than coursework, and a network across Los Angeles.</p>
+		</div>
+	</section>
+
+	<!-- Upcoming events -->
+	<section class="flex flex-col gap-10 px-8 py-16 sm:px-14 sm:py-20">
+		<div class="flex flex-wrap items-end justify-between gap-10">
+			<div class="flex flex-col gap-3">
+				<span class="text-xs tracking-[0.24em] uppercase text-brown">What's next</span>
+				<h2 class="font-serif text-4xl leading-[1.08] text-ink">Upcoming events</h2>
+			</div>
+			<a href="/events" class="whitespace-nowrap border-b border-border pb-1.5 text-[13px] tracking-[0.14em] uppercase text-ink">All events &amp; recaps</a>
+		</div>
+
+		<div class="flex flex-col gap-4.5">
+			<% featured.forEach(function(ev) { %>
+			<div class="grid grid-cols-1 items-center gap-6 border border-border bg-white p-5 sm:grid-cols-[216px_minmax(0,1fr)_auto] sm:gap-8">
+				<div class="flex h-[150px] items-end bg-[repeating-linear-gradient(135deg,#E9DFC4_0px,#E9DFC4_9px,#F7EFDC_9px,#F7EFDC_18px)] p-3">
+					<span class="bg-white px-2.5 py-1 font-mono text-[10px] text-muted">event photo</span>
+				</div>
+				<div class="flex flex-col gap-2.5">
+					<div class="flex flex-wrap items-baseline gap-4">
+						<span class="text-xs tracking-[0.14em] uppercase text-brown"><%= ev.when %></span>
+						<span class="text-[13px] text-muted"><%= ev.place %></span>
+					</div>
+					<a href="/events/<%= ev.id %>" class="font-serif text-3xl leading-[1.12] text-ink"><%= ev.title %></a>
+					<p class="max-w-[600px] text-sm leading-relaxed text-muted"><%= ev.blurb %></p>
+				</div>
+				<a href="/events/<%= ev.id %>" class="whitespace-nowrap bg-ink px-10 py-3.5 text-center text-xs tracking-[0.16em] uppercase text-gold">RSVP</a>
+			</div>
+			<% }); %>
+		</div>
+	</section>
+
+	<!-- Why join -->
+	<section class="grid grid-cols-1 gap-12 bg-gold px-8 py-16 text-ink sm:px-14 sm:py-20 lg:grid-cols-[1fr_1.1fr] lg:gap-18">
+		<div class="flex flex-col gap-4.5">
+			<span class="text-xs tracking-[0.24em] uppercase text-[#6B5310]">Why join</span>
+			<h2 class="font-serif text-4xl leading-[1.1]">Experience you can put on a r&eacute;sum&eacute;, not just a transcript.</h2>
+			<p class="max-w-sm text-base leading-relaxed text-body">Membership runs through PRSSA National and unlocks the chapter, the LA PRSA network, and everything below.</p>
+			<a href="/join" class="mt-2.5 self-start bg-ink px-7.5 py-4 text-[13px] tracking-[0.16em] uppercase text-gold">Join today &mdash; $55/year</a>
+		</div>
+		<div class="grid grid-cols-1 gap-px bg-ink/20 sm:grid-cols-2">
+			<div class="flex flex-col gap-2 bg-gold p-5.5">
+				<h3 class="font-serif text-2xl">Internship Center</h3>
+				<p class="text-sm leading-relaxed text-body">PR-only listings, plus a r&eacute;sum&eacute; employers can actually find.</p>
+			</div>
+			<div class="flex flex-col gap-2 bg-gold p-5.5">
+				<h3 class="font-serif text-2xl">Scholarships</h3>
+				<p class="text-sm leading-relaxed text-body">National awards for academic work and internship experience.</p>
+			</div>
+			<div class="flex flex-col gap-2 bg-gold p-5.5">
+				<h3 class="font-serif text-2xl">Committees</h3>
+				<p class="text-sm leading-relaxed text-body">Social media, outreach, alumni, events &mdash; the path to the board.</p>
+			</div>
+			<div class="flex flex-col gap-2 bg-gold p-5.5">
+				<h3 class="font-serif text-2xl">Conferences</h3>
+				<p class="text-sm leading-relaxed text-body">National and regional invitations at the member rate.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonials -->
+	<section class="flex flex-col gap-10 bg-cream-alt px-8 py-16 sm:px-14 sm:py-20">
+		<span class="text-xs tracking-[0.24em] uppercase text-brown">From our members</span>
+		<div class="grid grid-cols-1 gap-7 sm:grid-cols-3">
+			<div class="flex flex-col gap-5 border border-border bg-cream p-8">
+				<p class="font-serif text-2xl leading-[1.3] text-ink">The agency tour was the first time I could picture the job. Two months later I was interning at one.</p>
+				<div class="mt-auto flex items-center gap-3">
+					<span class="h-9.5 w-9.5 flex-none rounded-full bg-[#E9DFC4]"></span>
+					<div>
+						<p class="text-sm font-medium">Daniela R.</p>
+						<p class="text-[13px] text-muted">Communications, '26</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-col gap-5 border border-border bg-cream p-8">
+				<p class="font-serif text-2xl leading-[1.3] text-ink">I joined for the r&eacute;sum&eacute; line and stayed for the people. The board taught me how to run a campaign end to end.</p>
+				<div class="mt-auto flex items-center gap-3">
+					<span class="h-9.5 w-9.5 flex-none rounded-full bg-[#E9DFC4]"></span>
+					<div>
+						<p class="text-sm font-medium">Marcus T.</p>
+						<p class="text-[13px] text-muted">Public Relations, '25</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-col gap-5 border border-border bg-cream p-8">
+				<p class="font-serif text-2xl leading-[1.3] text-ink">As a mentor I keep coming back. These students show up prepared, and they ask better questions than most new hires.</p>
+				<div class="mt-auto flex items-center gap-3">
+					<span class="h-9.5 w-9.5 flex-none rounded-full bg-[#E9DFC4]"></span>
+					<div>
+						<p class="text-sm font-medium">Priya N.</p>
+						<p class="text-[13px] text-muted">Account Supervisor, LA PRSA</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="flex flex-wrap items-center justify-between gap-12 border-t border-border px-8 py-16 sm:px-14 sm:py-20">
+		<div class="flex flex-col gap-3">
+			<h2 class="max-w-xl font-serif text-3xl leading-[1.1] text-ink sm:text-4xl">Ready to join? Membership runs $55 for the year.</h2>
+			<p class="text-base text-muted">Register through PRSSA National, select Cal State LA, and you're in.</p>
+		</div>
+		<a href="/join" class="whitespace-nowrap bg-ink px-8 py-4.5 text-[13px] tracking-[0.16em] uppercase text-gold">Start your application</a>
+	</section>
+
+	<%- include('partials/footer') %>
+</body>
 </html>

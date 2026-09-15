@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Membership &mdash; Cal State LA PRSSA</title>
+</head>
+<body class="bg-cream font-sans text-body">
+	<%- include('partials/navbar') %>
+
+	<!-- Intro + pricing card -->
+	<section class="grid grid-cols-1 items-center gap-14 bg-cream-alt px-8 py-16 sm:px-14 sm:py-20 lg:grid-cols-[1.1fr_0.9fr]">
+		<div class="flex flex-col gap-5.5">
+			<span class="text-xs tracking-[0.24em] uppercase text-brown">Membership</span>
+			<h1 class="text-balance font-serif text-5xl leading-[1.04] text-ink sm:text-6xl">Join the chapter for <span class="italic">$55 a year.</span></h1>
+			<p class="max-w-lg text-lg leading-relaxed text-body">One fee covers national and chapter membership for the full academic year &mdash; every event, every workshop, and access to the PRSSA Internship Center.</p>
+		</div>
+		<div class="flex flex-col gap-5 border border-border bg-cream p-9">
+			<div class="flex items-baseline gap-2.5">
+				<span class="font-serif text-5xl leading-none text-ink">$55</span>
+				<span class="text-[15px] text-muted">/ academic year</span>
+			</div>
+			<div class="flex flex-col gap-3 text-[15px] text-body">
+				<div>National + chapter dues, one payment</div>
+				<div>Free entry to all chapter events</div>
+				<div>Internship Center and r&eacute;sum&eacute; bank</div>
+				<div>Scholarship and conference eligibility</div>
+			</div>
+			<a href="#" class="bg-ink py-4 text-center text-xs tracking-[0.16em] uppercase text-gold">Register with PRSSA National</a>
+			<span class="text-center text-[13px] text-muted">Select "Cal State LA" as your chapter at checkout.</span>
+		</div>
+	</section>
+
+	<!-- Steps -->
+	<section class="flex flex-col gap-11 px-8 py-16 sm:px-14 sm:py-20">
+		<h2 class="font-serif text-4xl leading-[1.08] text-ink">How to join, in four steps</h2>
+		<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+			<div class="flex flex-col gap-3 border-t border-ink pt-5">
+				<span class="text-xs tracking-[0.2em] text-brown">01</span>
+				<h3 class="font-serif text-2xl leading-tight text-ink">Come to a meeting</h3>
+				<p class="text-[15px] leading-relaxed text-muted">First two meetings of any semester are open to everyone, no dues required.</p>
+			</div>
+			<div class="flex flex-col gap-3 border-t border-border pt-5">
+				<span class="text-xs tracking-[0.2em] text-brown">02</span>
+				<h3 class="font-serif text-2xl leading-tight text-ink">Register nationally</h3>
+				<p class="text-[15px] leading-relaxed text-muted">Create your PRSSA National account and pick Cal State LA as your chapter.</p>
+			</div>
+			<div class="flex flex-col gap-3 border-t border-border pt-5">
+				<span class="text-xs tracking-[0.2em] text-brown">03</span>
+				<h3 class="font-serif text-2xl leading-tight text-ink">Pay your dues</h3>
+				<p class="text-[15px] leading-relaxed text-muted">$55 covers the year. Dues deadlines are the third week of each semester.</p>
+			</div>
+			<div class="flex flex-col gap-3 border-t border-border pt-5">
+				<span class="text-xs tracking-[0.2em] text-brown">04</span>
+				<h3 class="font-serif text-2xl leading-tight text-ink">Pick a committee</h3>
+				<p class="text-[15px] leading-relaxed text-muted">Social media, outreach, events, or alumni relations &mdash; where the real experience is.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ -->
+	<section class="grid grid-cols-1 gap-14 px-8 pb-16 sm:px-14 sm:pb-20 lg:grid-cols-[1fr_1.15fr]">
+		<div class="flex flex-col gap-4">
+			<h2 class="font-serif text-4xl leading-[1.1] text-ink">Questions before you pay?</h2>
+			<p class="text-base leading-relaxed text-muted">Send us a note and a board member will follow up within a couple of days.</p>
+			<a href="/contact" class="self-start border-b border-border pb-1.5 text-xs tracking-[0.16em] uppercase text-ink">Contact the board</a>
+		</div>
+		<div class="flex flex-col">
+			<% faqs.forEach(function(q) { %>
+			<div class="flex flex-col gap-2 border-b border-border py-6">
+				<h3 class="font-serif text-2xl leading-[1.25] text-ink"><%= q.q %></h3>
+				<p class="text-[15px] leading-relaxed text-muted"><%= q.a %></p>
+			</div>
+			<% }); %>
+		</div>
+	</section>
+
+	<%- include('partials/footer') %>
+</body>
+</html>

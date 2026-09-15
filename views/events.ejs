@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Events &mdash; Cal State LA PRSSA</title>
+</head>
+<body class="bg-cream font-sans text-body">
+	<%- include('partials/navbar') %>
+
+	<!-- Intro -->
+	<section class="flex flex-col gap-4.5 bg-cream-alt px-8 pb-14 pt-16 sm:px-14 sm:pt-18">
+		<span class="text-xs tracking-[0.24em] uppercase text-brown">Events</span>
+		<h1 class="font-serif text-5xl leading-[1.04] text-ink sm:text-6xl">Everything the chapter is running</h1>
+		<p class="max-w-2xl text-[17px] leading-relaxed text-body">RSVP for what's coming, or read the recap from something you missed. Events are open to members; professionals are welcome as guests and speakers.</p>
+	</section>
+
+	<!-- Filters -->
+	<div class="flex flex-wrap items-center gap-3 border-b border-border px-8 py-6 sm:px-14">
+		<% filters.forEach(function(f) { %>
+		<a href="/events?filter=<%= f.key %>" class="px-4 py-2 text-[13px] tracking-[0.1em] uppercase <%= f.active ? 'bg-ink text-gold' : 'border border-border text-body hover:border-brown' %>"><%= f.label %></a>
+		<% }); %>
+		<span class="ml-auto whitespace-nowrap text-[13px] tracking-[0.12em] uppercase text-muted"><%= eventList.length %> event<%= eventList.length === 1 ? '' : 's' %></span>
+	</div>
+
+	<!-- Event list -->
+	<section class="flex flex-col gap-4.5 px-8 py-14 sm:px-14 sm:py-20">
+		<% eventList.forEach(function(ev) { %>
+		<div class="grid grid-cols-1 items-center gap-6 border border-border bg-white p-5 sm:grid-cols-[216px_minmax(0,1fr)_auto] sm:gap-8">
+			<div class="flex h-[160px] items-start justify-end bg-[repeating-linear-gradient(135deg,#E9DFC4_0px,#E9DFC4_9px,#F7EFDC_9px,#F7EFDC_18px)] p-3">
+				<span class="bg-white px-2.5 py-1 text-[10px] tracking-[0.1em] uppercase text-ink"><%= ev.tag %></span>
+			</div>
+			<div class="flex flex-col gap-2.5">
+				<div class="flex flex-wrap items-baseline gap-4">
+					<span class="text-xs tracking-[0.14em] uppercase text-brown"><%= ev.when %></span>
+					<span class="text-[13px] text-muted"><%= ev.place %></span>
+				</div>
+				<a href="/events/<%= ev.id %>" class="font-serif text-3xl leading-[1.12] text-ink"><%= ev.title %></a>
+				<p class="max-w-[620px] text-sm leading-relaxed text-muted"><%= ev.blurb %></p>
+				<div class="flex gap-4.5 text-xs tracking-[0.04em] text-muted">
+					<span><%= ev.views %> views</span>
+					<span><%= ev.comments %> comments</span>
+					<span class="text-brown">&hearts; <%= ev.likes %></span>
+				</div>
+			</div>
+			<% if (ev.upcoming) { %>
+			<a href="/events/<%= ev.id %>" class="whitespace-nowrap bg-ink px-10 py-3.5 text-center text-xs tracking-[0.16em] uppercase text-gold">RSVP</a>
+			<% } else { %>
+			<a href="/events/<%= ev.id %>" class="whitespace-nowrap border border-ink px-10 py-3.5 text-center text-xs tracking-[0.16em] uppercase text-ink">Read recap</a>
+			<% } %>
+		</div>
+		<% }); %>
+	</section>
+
+	<%- include('partials/footer') %>
+</body>
+</html>

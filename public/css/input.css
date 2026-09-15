@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Instrument Serif', serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+
+  --color-cream: #FAF5EC;
+  --color-cream-alt: #F3EBDB;
+  --color-ink: #15130F;
+  --color-gold: #FFC72C;
+  --color-brown: #8A5A22;
+  --color-body: #3D392F;
+  --color-muted: #5A5548;
+  --color-border: #E5DFD1;
+}

@@ -1,0 +1,40 @@
+<% var active = typeof active !== 'undefined' ? active : ''; %>
+<% var navLink = function(name) { return 'border-b-2 pb-1 hover:text-brown ' + (active === name ? 'border-gold text-ink' : 'border-transparent'); }; %>
+<% var mobileNavLink = function(name) { return 'border-l-2 pl-4 hover:text-brown ' + (active === name ? 'border-gold text-ink' : 'border-transparent'); }; %>
+
+<header class="sticky top-0 z-20 border-b border-border bg-cream px-5 py-4 sm:px-14 sm:py-5">
+  <div class="flex items-center justify-between gap-6">
+    <a href="/" class="flex items-center gap-3">
+      <img src="/images/calstatela-logo.png" alt="Cal State LA" class="h-11 w-11 object-contain sm:h-14 sm:w-14" />
+      <div class="flex flex-col gap-0.5">
+        <span class="font-serif text-lg leading-none text-ink sm:text-xl">Cal State LA PRSSA</span>
+        <span class="hidden text-[9px] tracking-[0.22em] uppercase text-muted sm:block">Public Relations Student Society of America</span>
+      </div>
+    </a>
+
+    <nav class="hidden items-center gap-8 text-[13px] tracking-[0.12em] uppercase text-body lg:flex">
+      <a href="/about" class="<%= navLink('about') %>">About</a>
+      <a href="/events" class="<%= navLink('events') %>">Events</a>
+      <a href="/join" class="<%= navLink('join') %>">Membership</a>
+      <a href="/resources" class="<%= navLink('resources') %>">Resources</a>
+      <a href="/contact" class="<%= navLink('contact') %>">Contact</a>
+      <a href="/join" class="bg-gold px-6 py-2.5 font-medium text-ink hover:text-ink">Join</a>
+    </nav>
+
+    <input type="checkbox" id="nav-toggle" class="peer hidden" />
+    <label for="nav-toggle" class="flex h-9 w-9 cursor-pointer flex-col items-center justify-center gap-1.5 lg:hidden" aria-label="Toggle menu">
+      <span class="h-0.5 w-6 bg-ink"></span>
+      <span class="h-0.5 w-6 bg-ink"></span>
+      <span class="h-0.5 w-6 bg-ink"></span>
+    </label>
+
+    <nav class="fixed inset-x-0 top-[73px] hidden flex-col gap-5 border-b border-border bg-cream px-5 py-6 text-sm tracking-[0.12em] uppercase text-body peer-checked:flex sm:top-[85px] lg:hidden">
+      <a href="/about" class="<%= mobileNavLink('about') %>">About</a>
+      <a href="/events" class="<%= mobileNavLink('events') %>">Events</a>
+      <a href="/join" class="<%= mobileNavLink('join') %>">Membership</a>
+      <a href="/resources" class="<%= mobileNavLink('resources') %>">Resources</a>
+      <a href="/contact" class="<%= mobileNavLink('contact') %>">Contact</a>
+      <a href="/join" class="bg-gold px-6 py-3 text-center font-medium text-ink">Join</a>
+    </nav>
+  </div>
+</header>

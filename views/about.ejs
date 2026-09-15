@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>About &mdash; Cal State LA PRSSA</title>
+</head>
+<body class="bg-cream font-sans text-body">
+	<%- include('partials/navbar') %>
+
+	<!-- Intro -->
+	<section class="grid grid-cols-1 items-end gap-10 bg-cream-alt px-8 py-16 sm:px-14 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+		<div class="flex flex-col gap-5.5">
+			<span class="text-xs tracking-[0.24em] uppercase text-brown">About the chapter</span>
+			<h1 class="text-balance font-serif text-5xl leading-[1.04] text-ink sm:text-6xl">Founded in 2017 by students who wanted the industry closer.</h1>
+		</div>
+		<p class="text-[17px] leading-relaxed text-body">The Cal State LA chapter of the Public Relations Student Society of America is a pre-professional organization open to any student interested in public relations, strategic communication, marketing, or journalism. We meet twice a month, run two client campaigns a year, and send members to regional and national conferences.</p>
+	</section>
+
+	<!-- Three pillars -->
+	<section class="grid grid-cols-1 gap-12 px-8 py-16 sm:grid-cols-3 sm:px-14 sm:py-20">
+		<div class="flex flex-col gap-3">
+			<h2 class="font-serif text-[28px] text-ink">Professional development</h2>
+			<p class="text-[15px] leading-relaxed text-muted">Panels, agency tours, mock interviews, and portfolio reviews with working practitioners from across Los Angeles.</p>
+		</div>
+		<div class="flex flex-col gap-3">
+			<h2 class="font-serif text-[28px] text-ink">Real client work</h2>
+			<p class="text-[15px] leading-relaxed text-muted">Each semester the chapter takes on a campus or community client and delivers a full communications plan.</p>
+		</div>
+		<div class="flex flex-col gap-3">
+			<h2 class="font-serif text-[28px] text-ink">Community</h2>
+			<p class="text-[15px] leading-relaxed text-muted">A cohort of students who share notes on internships, applications, and everything the syllabus leaves out.</p>
+		</div>
+	</section>
+
+	<!-- Wide photo -->
+	<div class="px-8 pb-16 sm:px-14 sm:pb-20">
+		<div class="flex h-[380px] items-end bg-[repeating-linear-gradient(135deg,#E9DFC4_0px,#E9DFC4_9px,#F7EFDC_9px,#F7EFDC_18px)] p-6">
+			<span class="bg-cream px-2.5 py-1.5 font-mono text-[11px] text-muted">wide chapter photo &mdash; full group, spring 2026</span>
+		</div>
+	</div>
+
+	<!-- Executive board -->
+	<section class="flex flex-col gap-10 px-8 pb-16 sm:px-14 sm:pb-20">
+		<div class="flex flex-wrap items-end justify-between gap-8">
+			<h2 class="font-serif text-4xl leading-[1.08] text-ink">2026&ndash;27 Executive Board</h2>
+		</div>
+		<div class="grid grid-cols-2 gap-7 sm:grid-cols-4">
+			<% board.forEach(function(p) { %>
+			<div class="flex flex-col gap-3.5">
+				<div class="aspect-square bg-[repeating-linear-gradient(135deg,#E9DFC4_0px,#E9DFC4_9px,#F7EFDC_9px,#F7EFDC_18px)]"></div>
+				<div class="flex flex-col gap-1">
+					<span class="font-serif text-xl leading-tight text-ink"><%= p.name %></span>
+					<span class="text-[11px] tracking-[0.18em] uppercase text-brown"><%= p.role %></span>
+					<span class="text-sm text-muted"><%= p.major %></span>
+				</div>
+			</div>
+			<% }); %>
+		</div>
+	</section>
+
+	<!-- Faculty advisor -->
+	<section class="grid grid-cols-1 gap-14 border-t border-border bg-cream-alt px-8 py-16 sm:grid-cols-[1fr_1.2fr] sm:px-14 sm:py-20">
+		<h2 class="font-serif text-3xl leading-[1.12] text-ink">Our faculty advisor and professional affiliations</h2>
+		<div class="flex flex-col gap-6.5 text-base leading-relaxed text-body">
+			<p>The chapter is advised by faculty in the Department of Communication Studies and sponsored by the Los Angeles chapter of the Public Relations Society of America, which provides mentors, event access, and scholarship pathways.</p>
+			<div class="flex flex-wrap gap-12">
+				<div class="flex flex-col gap-1.5">
+					<span class="text-[11px] tracking-[0.2em] uppercase text-[#6E685C]">National</span>
+					<span class="font-serif text-xl text-ink">PRSSA National</span>
+				</div>
+				<div class="flex flex-col gap-1.5">
+					<span class="text-[11px] tracking-[0.2em] uppercase text-[#6E685C]">Sponsor</span>
+					<span class="font-serif text-xl text-ink">PRSA Los Angeles</span>
+				</div>
+				<div class="flex flex-col gap-1.5">
+					<span class="text-[11px] tracking-[0.2em] uppercase text-[#6E685C]">Campus</span>
+					<span class="font-serif text-xl text-ink">Communication Studies</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<%- include('partials/footer') %>
+</body>
+</html>
